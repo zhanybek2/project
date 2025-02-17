@@ -89,7 +89,7 @@ public class UserTest extends BaseApiTest {
                 .isCorrectStatusCode(204);
     }
 
-    @Test(description = "B")
+    @Test(description = "Проверяем успешное обновление пользователя")
     public void updateUserTest(){
         CreateUsersAndUpdate userUpdate = EntityManager.generateUsers();
         userController.editUser(userUpdate);

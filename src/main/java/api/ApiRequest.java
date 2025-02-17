@@ -83,16 +83,7 @@ public abstract class ApiRequest {
         return this.response;
     }
 
-    protected Response put(String endPoint, String body) {
-        log.info("Performed PUT {}", endPoint);
-        log.info("Body is {}", body);
-        this.response = given()
-                .spec(requestSpecification)
-                .body(body)
-                .put(endPoint);
-        logResponse();
-        return this.response;
-    }
+
     protected Response delete(String endPoint) {
         log.info("Performed DELETE {}", endPoint);
         this.response = given()
@@ -105,15 +96,15 @@ public abstract class ApiRequest {
         log.info("Performed PUT {}", endPoint);
         log.info("Params is {}", params);
 
-        // Отправляем PUT запрос с параметрами в теле запроса
+
         this.response = given()
                 .spec(requestSpecification)
-                .contentType(ContentType.JSON)// Спецификация запроса (например, базовые настройки)
-                .body(params)  // Передаем параметры в теле запроса
-                .put(endPoint);  // Выполняем PUT запрос
-        logResponse();  // Логируем ответ
+                .contentType(ContentType.JSON)
+                .body(params)
+                .put(endPoint);
+        logResponse();
 
-        return this.response;  // Возвращаем ответ
+        return this.response;
     }
 
 }

@@ -24,12 +24,7 @@ public class EntityManager {
 
     }
 
-    public static UserRegisterResponse generateRegisterResponse() {
-        return UserRegisterResponse.builder()
-                .id(4)
-                .token("QpwL5tke4Pnpja7X4")
-                .build();
-    }
+
     public static UserLogin generateUserLogin() {
         return UserLogin.builder()
                 .email("eve.holt@reqres.in")
