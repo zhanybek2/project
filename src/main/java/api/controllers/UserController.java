@@ -26,16 +26,16 @@ public class UserController extends ApiRequest {
     public UsersResponse getUsers() {
         return super.get(getEndpoint(API, USERSPAGE)).as(UsersResponse.class);
     }
-    public Users getUserById(String id) {
-        return super.get(getEndpoint(API, USERS, id)).as(Users.class);
-    }
+//    public Users getUserById(String id) {
+//        return super.get(getEndpoint(API, USERS, id)).as(Users.class);
+//    }
 
 
-    public Users[] getUserBy(By by, String value) {
+    public Users getUserBy(By by, String value) {
         HashMap<String, String> parameters = new HashMap<>() {{
             put(by.getKey(), value);
         }};
-        return super.get(getEndpoint(API,USERS, formParameter(parameters))).as(Users[].class);
+        return super.get(getEndpoint(API,USERS, formParameter(parameters))).as(Users.class);
     }
 
     public CreateUsersAndUpdate createUser(CreateUsersAndUpdate user) {

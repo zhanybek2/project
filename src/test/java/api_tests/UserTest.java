@@ -37,7 +37,7 @@ public class UserTest extends BaseApiTest {
 
     @Test(description = "Получение пользователя по ID")
     public void getUserByIDTest() {
-        Users user = userController.getUserById("9");
+        Users user = userController.getUserBy(UserController.By.ID,"7");
         ApiAssert.assertThat(userController.getResponse())
                 .isCorrectStatusCode(200);
 
