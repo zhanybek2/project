@@ -17,7 +17,7 @@ import lombok.experimental.FieldDefaults;
 public class CreateUsersAndUpdate extends BaseEntity {
 
 
-    private String name;
-    private String job;
+    String name;
+    String job;
 
 }
