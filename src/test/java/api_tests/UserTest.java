@@ -16,6 +16,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static api.controllers.UserController.By.EMAIL;
+import static api.controllers.UserController.By.ID;
+
 
 public class UserTest extends BaseApiTest {
     UserController userController;
@@ -37,7 +40,7 @@ public class UserTest extends BaseApiTest {
 
     @Test(description = "Получение пользователя по ID")
     public void getUserByTest() {
-        Users user = userController.getUserBy(UserController.By.ID,"7");
+        Users user = userController.getUserBy(ID,"7");
         ApiAssert.assertThat(userController.getResponse())
                 .isCorrectStatusCode(200);
 
